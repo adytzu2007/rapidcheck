@@ -1,0 +1,43 @@
+rapidcheck_lib_srcs = [
+  'BeforeMinimalTestCase.cpp',
+  'Check.cpp',
+  'GenerationFailure.cpp',
+  'Log.cpp',
+  'Random.cpp',
+  'Show.cpp',
+  'detail/Any.cpp',
+  'detail/Assertions.cpp',
+  'detail/Base64.cpp',
+  'detail/Configuration.cpp',
+  'detail/DefaultTestListener.cpp',
+  'detail/FrequencyMap.cpp',
+  'detail/ImplicitParam.cpp',
+  'detail/LogTestListener.cpp',
+  'detail/MapParser.cpp',
+  'detail/MulticastTestListener.cpp',
+  'detail/ParseException.cpp',
+  'detail/Platform.cpp',
+  'detail/Property.cpp',
+  'detail/PropertyContext.cpp',
+  'detail/ReproduceListener.cpp',
+  'detail/Results.cpp',
+  'detail/Serialization.cpp',
+  'detail/StringSerialization.cpp',
+  'detail/TestMetadata.cpp',
+  'detail/TestParams.cpp',
+  'detail/Testing.cpp',
+  'gen/Numeric.cpp',
+  'gen/Text.cpp',
+  'gen/detail/ExecHandler.cpp',
+  'gen/detail/GenerationHandler.cpp',
+  'gen/detail/Recipe.cpp',
+  'gen/detail/ScaleInteger.cpp',
+]
+
+rapidcheck_lib = library('rapidcheck',
+  sources : rapidcheck_lib_srcs,
+  include_directories : inc)
+
+rapidcheck_lib_dep = declare_dependency(
+  link_with : rapidcheck_lib,
+  include_directories : inc)
